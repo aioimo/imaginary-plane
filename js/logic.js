@@ -18,20 +18,30 @@ function plus(x, y, a, b) {
   return { x: x + a, y: y + b };
 }
 
+function nextTerm(x, y, c) {
+  const [x_0, y_0] = c;
+
+  const { x: a, y: b } = square(x, y);
+  const { x: nextX, y: nextY } = plus(a, b, x_0, y_0);
+  return { nextX, nextY };
+}
+
 const precision = 100;
 function getOrbit(x_0, y_0) {
   const terms = [{ x: x_0, y: y_0 }];
+
+  const c = [x_0, y_0];
+
   let x = x_0;
   let y = y_0;
 
   for (let i = 0; i < precision; i++) {
-    const { x: a, y: b } = square(x, y);
-    const { x: m, y: n } = plus(a, b, x_0, y_0);
+    const { nextX, nextY } = nextTerm(x, y, c);
 
-    terms.push({ x: m, y: n });
+    terms.push({ x: nextX, y: nextY });
 
-    x = m;
-    y = n;
+    x = nextX;
+    y = nextY;
 
     if (x ** 2 + y ** 2 > 4) {
       break;
