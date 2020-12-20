@@ -18,4 +18,4 @@ const minY = centerY - rangeY / 2;
 const maxY = centerY + rangeY / 2;
 
 const TICK_LENGTH = 10;
-const POINT_RADIUS = 2;
+const POINT_RADIUS = 1;

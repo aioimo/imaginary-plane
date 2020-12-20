@@ -26,13 +26,14 @@ canvas.onmousemove = (e) => {
   const mouseX = Math.max(e.x - 300, 50);
   const mouseY = Math.max(e.y - 100, 100);
 
+  const { orbit, diverges } = getOrbit(x, y);
+
   follower.style.display = 'block';
   follower.style.left = mouseX + 'px';
   follower.style.top = mouseY + 'px';
-  follower.innerText = formatComplexNumber(x, y);
+  follower.innerText = formatComplexNumber(x, y, diverges);
 
-  const orbit = getOrbit(x, y);
-  drawOrbit(orbit);
+  drawOrbit(orbit, diverges);
 };
 
 canvas.onmouseleave = (e) => {

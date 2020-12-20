@@ -2,8 +2,6 @@
 //
 
 function drawCircle(canvasX, canvasY, radius) {
-  ctx.fillStyle = 'blue';
-
   ctx.beginPath();
   ctx.arc(canvasX, canvasY, radius, 0, 2 * Math.PI);
   ctx.closePath();
@@ -100,13 +98,13 @@ function drawAxes() {
 // Orbit
 //
 
-function drawOrbit(orbit) {
+function drawOrbit(orbit, diverges) {
   for (let i = 0; i < orbit.length - 1; i++) {
     const start = orbit[i];
     const end = orbit[i + 1];
 
     drawPoint(start.x, start.y);
-    connectPoints(start.x, start.y, end.x, end.y, 'blue');
+    connectPoints(start.x, start.y, end.x, end.y, diverges ? 'red' : 'blue');
     drawPoint(end.x, end.y);
   }
 }

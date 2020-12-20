@@ -28,25 +28,26 @@ function nextTerm(x, y, c) {
 
 const precision = 100;
 function getOrbit(x_0, y_0) {
-  const terms = [{ x: x_0, y: y_0 }];
+  const orbit = [{ x: x_0, y: y_0 }];
+  let diverges = undefined;
 
   const c = [x_0, y_0];
-
   let x = x_0;
   let y = y_0;
 
   for (let i = 0; i < precision; i++) {
     const { nextX, nextY } = nextTerm(x, y, c);
 
-    terms.push({ x: nextX, y: nextY });
+    orbit.push({ x: nextX, y: nextY });
 
     x = nextX;
     y = nextY;
 
     if (x ** 2 + y ** 2 > 4) {
+      diverges = i;
       break;
     }
   }
 
-  return terms;
+  return { orbit, diverges };
 }
