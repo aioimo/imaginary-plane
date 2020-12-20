@@ -1,3 +1,15 @@
+function canvasToCartesian(x, y) {
+  const cartesianX = minX + x * (rangeX / width);
+  const cartesianY = maxY - y * (rangeY / height);
+  return { x: cartesianX, y: cartesianY };
+}
+
+function cartesianToCanvas(x, y) {
+  const canvasX = (x - minX) * (width / rangeX);
+  const canvasY = (maxY - y) * (height / rangeY);
+  return { x: canvasX, y: canvasY };
+}
+
 function square(x, y) {
   return { x: x * x - y * y, y: 2 * x * y };
 }

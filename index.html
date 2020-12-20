@@ -4,16 +4,25 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/tachyons@4.12.0/css/tachyons.min.css"
+    />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <header>
+    <header class="tc">
       <h1>Imaginary Plane</h1>
+      <p>Z<sub>0</sub> = 0</p>
+      <p>Z<sub>n</sub> = Z<sub>n-1</sub><sup>2</sup> + c</p>
     </header>
-    <section>
-      <canvas id="canvas" width="1000" height="800"></canvas>
+    <section class="pa3 tc">
+      <canvas class="b" id="canvas" width="1000" height="800"></canvas>
     </section>
     <div id="follower"></div>
+    <script src="./js/setup.js"></script>
+    <script src="./js/util.js"></script>
+    <script src="./js/canvasUtils.js"></script>
     <script src="./js/logic.js"></script>
     <script src="./js/main.js"></script>
   </body>
