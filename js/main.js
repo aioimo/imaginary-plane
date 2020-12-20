@@ -1,7 +1,7 @@
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 
-const current = document.getElementById('current');
+const follower = document.getElementById('follower');
 
 const width = canvas.width;
 const height = canvas.height;
@@ -9,7 +9,7 @@ const aspectRatio = width / height;
 
 const centerX = -0.65;
 const centerY = 0;
-const rangeX = 3.0;
+const rangeX = 3.4;
 const rangeY = rangeX / aspectRatio;
 
 const minX = centerX - rangeX / 2;
@@ -52,7 +52,7 @@ function setup() {
 }
 
 function reset() {
-  current.innerText = '';
+  follower.style.display = 'none';
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   setup();
 }
@@ -147,7 +147,13 @@ canvas.onmousemove = (e) => {
   reset();
   const { x, y } = canvasToCartesian(e.offsetX, e.offsetY);
 
-  current.innerText = formatComplexNumber(x, y);
+  const mouseX = Math.max(e.x - 100, 200);
+  const mouseY = Math.max(e.y - 100, 100);
+
+  follower.style.display = 'block';
+  follower.style.left = mouseX - 200 + 'px';
+  follower.style.top = mouseY + 'px';
+  follower.innerText = formatComplexNumber(x, y);
 
   const orbit = getOrbit(x, y);
   drawOrbit(orbit);
