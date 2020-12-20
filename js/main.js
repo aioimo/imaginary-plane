@@ -5,8 +5,8 @@ function formatComplexNumber(x, y) {
   const roundedY = round(y);
 
   return positive
-    ? `${roundedX} + ${roundedY} i`
-    : `${roundedX} - ${-roundedY} i`;
+    ? `c = ${roundedX} + ${roundedY} i`
+    : `c = ${roundedX} - ${-roundedY} i`;
 }
 
 function setup() {

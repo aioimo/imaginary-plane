@@ -38,20 +38,30 @@ function drawXAxis() {
   connectPoints(minX, 0, maxX, 0);
 }
 
-function drawVerticalTick(cartesianX, cartesianY, length = TICK_LENGTH) {
+function drawVerticalTick(cartesianX, cartesianY, val, length = TICK_LENGTH) {
   const { x, y } = cartesianToCanvas(cartesianX, cartesianY);
   ctx.beginPath();
   ctx.moveTo(x, y - length);
   ctx.lineTo(x, y + length);
   ctx.stroke();
+  if (val) {
+    ctx.font = '18px serif';
+    ctx.fillStyle = 'black';
+    ctx.fillText(`${val.toFixed(1)}`, x - 13, y + 30);
+  }
 }
 
-function drawHorizontalTick(cartesianX, cartesianY, length = TICK_LENGTH) {
+function drawHorizontalTick(cartesianX, cartesianY, val, length = TICK_LENGTH) {
   const { x, y } = cartesianToCanvas(cartesianX, cartesianY);
   ctx.beginPath();
   ctx.moveTo(x - length, y);
   ctx.lineTo(x + length, y);
   ctx.stroke();
+  if (val) {
+    ctx.font = '18px serif';
+    ctx.fillStyle = 'black';
+    ctx.fillText(`${val.toFixed(1)}i`, x + 15, y + 4);
+  }
 }
 
 function drawXTicks() {
@@ -60,9 +70,9 @@ function drawXTicks() {
 
   for (let x = start; x <= end; x += 0.5) {
     if (x % 1 === 0) {
-      drawVerticalTick(x, 0);
+      drawVerticalTick(x, 0, x);
     } else {
-      drawVerticalTick(x, 0, TICK_LENGTH / 2);
+      drawVerticalTick(x, 0, x, TICK_LENGTH / 2);
     }
   }
 }
@@ -73,9 +83,9 @@ function drawYTicks() {
 
   for (let y = start; y <= end; y += 0.5) {
     if (y % 1 === 0) {
-      drawHorizontalTick(0, y);
+      drawHorizontalTick(0, y, y);
     } else {
-      drawHorizontalTick(0, y, TICK_LENGTH / 2);
+      drawHorizontalTick(0, y, y, TICK_LENGTH / 2);
     }
   }
 }
