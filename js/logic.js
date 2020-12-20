@@ -43,9 +43,10 @@ function getOrbit(x_0, y_0) {
     x = nextX;
     y = nextY;
 
-    if (x ** 2 + y ** 2 > 4) {
-      diverges = i;
-      break;
+    if (!diverges) {
+      if (x ** 2 + y ** 2 > 4) {
+        diverges = i;
+      }
     }
   }
 

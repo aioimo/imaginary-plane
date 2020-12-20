@@ -9,6 +9,10 @@ function formatComplexNumber(x, y) {
     : `c = ${roundedX} - ${-roundedY} i`;
 }
 
+function formatDivergesInfo(diverges) {
+  return `diverges after ${diverges} iterations`;
+}
+
 function setup() {
   drawAxes();
 }
@@ -31,7 +35,15 @@ canvas.onmousemove = (e) => {
   follower.style.display = 'block';
   follower.style.left = mouseX + 'px';
   follower.style.top = mouseY + 'px';
-  follower.innerText = formatComplexNumber(x, y, diverges);
+
+  cValue.innerText = formatComplexNumber(x, y, diverges);
+
+  if (diverges) {
+    divergesInfo.style.display = 'block';
+    divergesInfo.innerText = formatDivergesInfo(diverges);
+  } else {
+    divergesInfo.style.display = 'none';
+  }
 
   drawOrbit(orbit, diverges);
 };

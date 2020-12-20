@@ -2,6 +2,8 @@ const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 
 const follower = document.getElementById('follower');
+const cValue = document.getElementById('cValue');
+const divergesInfo = document.getElementById('divergesInfo');
 
 const width = canvas.width;
 const height = canvas.height;
