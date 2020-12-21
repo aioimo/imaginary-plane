@@ -1,9 +1,28 @@
+:root {
+  --green: #003518;
+  --box-shadow: 1px 1px 2px var(--green);
+}
+
+body {
+  font-family: Georgia, Times, 'Times New Roman', serif;
+}
+
+#header {
+  font-size: 1.8rem;
+}
+
+#nav {
+  background-color: var(--green);
+  color: white;
+  font-size: 1.6rem;
+}
+
 #follower {
   position: absolute;
   display: none;
   padding: 0.5rem;
   border-radius: 5px;
-  box-shadow: 1px 1px 2px;
+  box-shadow: var(--box-shadow);
   background-color: white;
   font-size: 1.4rem;
 }
@@ -13,5 +32,5 @@
 }
 
 #canvas {
-  box-shadow: 1px 1px 2px;
+  box-shadow: var(--box-shadow);
 }

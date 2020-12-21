@@ -52,4 +52,11 @@ canvas.onmouseleave = (e) => {
   reset();
 };
 
+rangeXSlider.oninput = (e) => {
+  const rangeX = e.target.value / 10;
+  console.log('rangeX', rangeX);
+  reassignConfig(rangeX);
+  reset();
+};
+
 setup();
