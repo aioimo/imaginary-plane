@@ -1,9 +1,7 @@
 function formatComplexNumber(x, y) {
   const positive = y >= 0;
-
   const roundedX = round(x);
   const roundedY = round(y);
-
   return positive
     ? `c = ${roundedX} + ${roundedY} i`
     : `c = ${roundedX} - ${-roundedY} i`;
@@ -23,7 +21,18 @@ function reset() {
   setup();
 }
 
-canvas.onmousemove = (e) => {
+let isHoldingMouse = false;
+
+body.onmouseup = (e) => {
+  isHoldingMouse = false;
+};
+
+canvas.onmousedown = (e) => {
+  reset();
+  isHoldingMouse = true;
+};
+
+const handleOrbit = (e) => {
   reset();
   const { x, y } = canvasToCartesian(e.offsetX, e.offsetY);
 
@@ -48,13 +57,27 @@ canvas.onmousemove = (e) => {
   drawOrbit(orbit, diverges);
 };
 
+const translate = (e) => {
+  const newCenterX = centerX - e.movementX / 200;
+  const newCenterY = centerY + e.movementY / 200;
+  reassignConfig(rangeX, newCenterX, newCenterY);
+  reset();
+};
+
+canvas.onmousemove = (e) => {
+  if (isHoldingMouse) {
+    translate(e);
+  } else {
+    handleOrbit(e);
+  }
+};
+
 canvas.onmouseleave = (e) => {
   reset();
 };
 
 rangeXSlider.oninput = (e) => {
   const rangeX = e.target.value / 10;
-  console.log('rangeX', rangeX);
   reassignConfig(rangeX);
   reset();
 };

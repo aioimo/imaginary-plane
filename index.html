@@ -9,8 +9,9 @@
       href="https://unpkg.com/tachyons@4.12.0/css/tachyons.min.css"
     />
     <link rel="stylesheet" href="styles.css" />
+    <link rel="shortcut icon" type="image/jpg" href="./assets/favicon.png" />
   </head>
-  <body>
+  <body id="body">
     <nav id="nav" class="pa3 pr4 pl4 flex justify-between">
       <p>Imaginary Plane</p>
       <ul class="list p0">
@@ -21,7 +22,7 @@
       <h1>Imaginary Plane</h1>
       <p>Z<sub>0</sub> = 0</p>
       <p>Z<sub>n</sub> = Z<sub>n-1</sub><sup>2</sup> + c</p>
-      <input type="range" min="1" max="40" value="34" id="rangeXSlider" />
+      <input type="range" min="1" max="60" value="34" id="rangeXSlider" />
     </header>
     <section class="pa3 tc">
       <canvas class="b" id="canvas" width="1000" height="800"></canvas>

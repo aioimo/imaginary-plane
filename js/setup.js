@@ -1,6 +1,7 @@
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 
+const body = document.getElementById('body');
 const follower = document.getElementById('follower');
 const cValue = document.getElementById('cValue');
 const divergesInfo = document.getElementById('divergesInfo');
@@ -9,8 +10,9 @@ const rangeXSlider = document.getElementById('rangeXSlider');
 const width = canvas.width;
 const height = canvas.height;
 const aspectRatio = width / height;
-const centerX = -0.65;
-const centerY = 0;
+
+let centerX = -0.65;
+let centerY = 0;
 
 let rangeX = 3.4;
 
@@ -23,7 +25,10 @@ let maxY = centerY + rangeY / 2;
 const TICK_LENGTH = 10;
 const POINT_RADIUS = 1;
 
-function reassignConfig(newRangeX) {
+function reassignConfig(newRangeX, newCenterX = centerX, newCenterY = centerY) {
+  centerX = newCenterX;
+  centerY = newCenterY;
+
   rangeX = newRangeX;
   rangeY = rangeX / aspectRatio;
   minX = centerX - rangeX / 2;
