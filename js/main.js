@@ -1,16 +1,3 @@
-function formatComplexNumber(x, y) {
-  const positive = y >= 0;
-  const roundedX = round(x);
-  const roundedY = round(y);
-  return positive
-    ? `c = ${roundedX} + ${roundedY} i`
-    : `c = ${roundedX} - ${-roundedY} i`;
-}
-
-function formatDivergesInfo(diverges) {
-  return `diverges after ${diverges} iterations`;
-}
-
 function setup() {
   drawAxes();
 }
@@ -22,15 +9,6 @@ function reset() {
 }
 
 let isHoldingMouse = false;
-
-body.onmouseup = (e) => {
-  isHoldingMouse = false;
-};
-
-canvas.onmousedown = (e) => {
-  reset();
-  isHoldingMouse = true;
-};
 
 const handleOrbit = (e) => {
   reset();
@@ -57,22 +35,39 @@ const handleOrbit = (e) => {
   drawOrbit(orbit, diverges);
 };
 
-const translate = (e) => {
+const translatePlane = (e) => {
   const newCenterX = centerX - e.movementX / 200;
   const newCenterY = centerY + e.movementY / 200;
   reassignConfig(rangeX, newCenterX, newCenterY);
   reset();
 };
 
+// Listeners
+//
+body.onmouseup = (e) => {
+  isHoldingMouse = false;
+};
+
+canvas.onmousedown = (e) => {
+  reset();
+  isHoldingMouse = true;
+};
+
 canvas.onmousemove = (e) => {
   if (isHoldingMouse) {
-    translate(e);
+    translatePlane(e);
   } else {
     handleOrbit(e);
   }
 };
 
-canvas.onmouseleave = (e) => {
+canvas.onmouseleave = () => {
+  reset();
+};
+
+canvas.onwheel = (e) => {
+  const newRangeX = Math.max(1, Math.min((rangeX += e.wheelDeltaY / 240), 9));
+  reassignConfig(newRangeX);
   reset();
 };
 
