@@ -9,9 +9,9 @@ function drawCircle(canvasX, canvasY, radius) {
   ctx.fill();
 }
 
-function drawPoint(cartesianX, cartesianY) {
+function drawPoint(cartesianX, cartesianY, radius = POINT_RADIUS) {
   const { x, y } = cartesianToCanvas(cartesianX, cartesianY);
-  drawCircle(x, y, POINT_RADIUS);
+  drawCircle(x, y, radius);
 }
 
 function connectPoints(x1, y1, x2, y2, color = 'black') {
@@ -97,13 +97,12 @@ function drawAxes() {
 
 // Orbit
 //
-
 function drawOrbit(orbit, diverges) {
   for (let i = 0; i < orbit.length - 1; i++) {
     const start = orbit[i];
     const end = orbit[i + 1];
 
-    drawPoint(start.x, start.y);
+    drawPoint(start.x, start.y, i === 0 ? 2 : undefined);
     connectPoints(start.x, start.y, end.x, end.y, diverges ? 'red' : 'blue');
     drawPoint(end.x, end.y);
   }
