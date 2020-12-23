@@ -1,7 +1,8 @@
 :root {
   --green: #003518;
   --box-shadow: 1px 1px 2px var(--green);
-  --nav-height: 60px;
+  --nav-height: 75px;
+  --border-radius: 5px;
 }
 
 body {
@@ -17,7 +18,7 @@ body {
 #nav {
   background-color: var(--green);
   color: white;
-  /* font-size: 1.6rem; */
+  font-size: 1.4rem;
   height: var(--nav-height);
 }
 
@@ -25,7 +26,7 @@ body {
   position: absolute;
   display: none;
   padding: 0.5rem;
-  border-radius: 5px;
+  border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
   background-color: white;
   font-size: 1.4rem;
@@ -41,4 +42,25 @@ body {
 
 .grabbing {
   cursor: grabbing;
+}
+
+.link {
+  display: inline-block;
+  margin-left: 2rem;
+}
+
+.link a {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem;
+}
+
+.link a:hover {
+  color: var(--green);
+  background-color: white;
+  border-radius: var(--border-radius);
+}
+
+.active a {
+  border-bottom: 1px solid white;
 }

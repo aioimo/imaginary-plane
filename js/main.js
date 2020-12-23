@@ -75,9 +75,15 @@ canvas.onwheel = (e) => {
   reset();
 };
 
+const getNavHeight = () => {
+  return parseInt(
+    window.getComputedStyle($nav).getPropertyValue('--nav-height')
+  );
+};
+
 const configureSize = (e) => {
   canvas.width = e.currentTarget.innerWidth;
-  canvas.height = e.currentTarget.innerHeight - 60;
+  canvas.height = e.currentTarget.innerHeight - getNavHeight();
   reassignConfig({});
   reset();
 };
