@@ -42,44 +42,8 @@ const translatePlane = (e) => {
   reset();
 };
 
-// Listeners
-//
-body.onmouseup = () => {
-  isHoldingMouse = false;
-  canvas.classList.add('pointer');
-  canvas.classList.remove('grabbing');
-};
-
-canvas.onmousedown = () => {
-  reset();
-  canvas.classList.remove('pointer');
-  canvas.classList.add('grabbing');
-  isHoldingMouse = true;
-};
-
-canvas.onmouseup = handleOrbit;
-
-canvas.onmousemove = (e) => {
-  if (isHoldingMouse) {
-    translatePlane(e);
-  } else {
-    handleOrbit(e);
-  }
-};
-
-canvas.onmouseleave = reset;
-
-canvas.onwheel = (e) => {
-  const newRangeX = Math.max(1, Math.min((rangeX += e.wheelDeltaY / 240), 9));
-  reassignConfig({ newRangeX });
-  reset();
-};
-
-const getNavHeight = () => {
-  return parseInt(
-    window.getComputedStyle($nav).getPropertyValue('--nav-height')
-  );
-};
+const getNavHeight = () =>
+  parseInt(window.getComputedStyle($nav).getPropertyValue('--nav-height'));
 
 const configureSize = (e) => {
   canvas.width = e.currentTarget.innerWidth;
@@ -88,7 +52,36 @@ const configureSize = (e) => {
   reset();
 };
 
+// Listeners
+//
 window.onload = configureSize;
 window.onresize = configureSize;
+
+body.onmouseup = () => {
+  isHoldingMouse = false;
+  canvas.classList.add('pointer');
+  canvas.classList.remove('grabbing');
+};
+
+canvas.onmouseup = handleOrbit;
+canvas.onmouseleave = reset;
+canvas.onmousemove = (e) => {
+  if (isHoldingMouse) {
+    translatePlane(e);
+  } else {
+    handleOrbit(e);
+  }
+};
+canvas.onmousedown = () => {
+  reset();
+  canvas.classList.remove('pointer');
+  canvas.classList.add('grabbing');
+  isHoldingMouse = true;
+};
+canvas.onwheel = (e) => {
+  const newRangeX = Math.max(1, Math.min((rangeX += e.wheelDeltaY / 240), 9));
+  reassignConfig({ newRangeX });
+  reset();
+};
 
 setup();
