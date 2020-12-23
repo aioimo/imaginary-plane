@@ -30,8 +30,8 @@
   background-color: var(--green);
   color: var(--green);
   transform-origin: 5px 20px;
-  -webkit-animation: dot-revolution 1.4s linear infinite;
-  animation: dot-revolution 1.4s linear infinite;
+  -webkit-animation: dot-revolution 0.5s linear infinite;
+  animation: dot-revolution 0.5s linear infinite;
 }
 
 .dot-revolution::after {
@@ -43,8 +43,8 @@
   background-color: var(--green);
   color: var(--green);
   transform-origin: 5px 35px;
-  -webkit-animation: dot-revolution 1s linear infinite;
-  animation: dot-revolution 1s linear infinite;
+  -webkit-animation: dot-revolution 0.1s linear infinite;
+  animation: dot-revolution 0.1s linear infinite;
 }
 
 @-webkit-keyframes dot-revolution {

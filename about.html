@@ -8,7 +8,8 @@
       rel="stylesheet"
       href="https://unpkg.com/tachyons@4.12.0/css/tachyons.min.css"
     />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="./styles/index.css" />
+    <link rel="stylesheet" href="./styles/animation.css" />
     <link rel="shortcut icon" type="image/jpg" href="./assets/favicon.png" />
   </head>
   <body id="body">
@@ -21,12 +22,68 @@
         <li class="link active"><a href="./about.html">What is this?</a></li>
       </ul>
     </nav>
-    <header class="header flex justify-around items-center mt4 mb4 tc">
+    <!-- <header class="header flex justify-around items-center mt4 mb4 tc">
       <h1 class="i">About</h1>
-      <div class="card">
-        <p>Z<sub>0</sub> = 0</p>
-        <p>Z<sub>n</sub> = Z<sub>n-1</sub><sup>2</sup> + c</p>
-      </div>
-    </header>
+    </header> -->
+    <div class="wrapper mt4">
+      <section>
+        <div class="question-container">
+          <div class="question"><h1>What is this graph?</h1></div>
+          <div class="flex justify-between">
+            <div class="w-50 answer">
+              <p>
+                The lines on the graph are a representation of the recursive
+                sequence defined to the right.
+              </p>
+
+              <p>
+                <span class="b">In words:</span> the first term is
+                <code>0</code>, and we calculate the next term by squaring the
+                previous term, and adding the constant <code>c</code>.
+              </p>
+              <p class="special">
+                <code>c</code> here is whichever coordinate your mouse is
+                hovering over.
+              </p>
+            </div>
+            <aside>
+              <div class="card">
+                <p>Z<sub>0</sub> = 0</p>
+                <p>Z<sub>n</sub> = Z<sub>n-1</sub><sup>2</sup> + c</p>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="question-container">
+          <div class="question"><h1>For example</h1></div>
+          <div class="w-50 answer">
+            <p>Let <code>c = 1</code>.</p>
+            <p>
+              Then we have <br />
+              <code>Z<sub>0</sub> = 0</code> <br />
+              <code>Z<sub>1</sub> = 0<sup>2</sup> + 1 = 1</code> <br />
+              <code>Z<sub>2</sub> = 1<sup>2</sup> + 1 = 2</code>
+            </p>
+
+            <p>
+              <code>Z<sub>0</sub> = 0</code>
+              <code
+                ><p>Z<sub>n</sub> = Z<sub>n-1</sub><sup>2</sup> + c</p></code
+              >
+              In words: the first term is <code>0</code>. We calculate the next
+              term by squaring the previous term, and adding a constant
+              <code>c</code>. (Where <code>c</code> here is wherever your mouse
+              is on the plane.)
+            </p>
+            <p>
+              These terms themselves form the vertices of the shape that is
+              graphed when your mouse is hovering over c.
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
   </body>
 </html>
