@@ -5,11 +5,11 @@ const body = document.getElementById('body');
 const follower = document.getElementById('follower');
 const cValue = document.getElementById('cValue');
 const info = document.getElementById('info');
-const slider = document.getElementById('slider');
+// const slider = document.getElementById('slider');
 
-const width = canvas.width;
-const height = canvas.height;
-const aspectRatio = width / height;
+let width = canvas.width;
+let height = canvas.height;
+let aspectRatio = width / height;
 
 let centerX = -0.65;
 let centerY = 0;
@@ -25,7 +25,15 @@ let maxY = centerY + rangeY / 2;
 const TICK_LENGTH = 10;
 const POINT_RADIUS = 1;
 
-function reassignConfig(newRangeX, newCenterX = centerX, newCenterY = centerY) {
+function reassignConfig({
+  newRangeX = rangeX,
+  newCenterX = centerX,
+  newCenterY = centerY,
+}) {
+  width = canvas.width;
+  height = canvas.height;
+  aspectRatio = width / height;
+
   centerX = newCenterX;
   centerY = newCenterY;
 

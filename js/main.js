@@ -38,7 +38,7 @@ const handleOrbit = (e) => {
 const translatePlane = (e) => {
   const newCenterX = centerX - e.movementX / 200;
   const newCenterY = centerY + e.movementY / 200;
-  reassignConfig(rangeX, newCenterX, newCenterY);
+  reassignConfig({ newCenterX, newCenterY });
   reset();
 };
 
@@ -67,13 +67,22 @@ canvas.onmouseleave = () => {
 
 canvas.onwheel = (e) => {
   const newRangeX = Math.max(1, Math.min((rangeX += e.wheelDeltaY / 240), 9));
-  reassignConfig(newRangeX);
+  reassignConfig({ newRangeX });
   reset();
 };
 
-slider.oninput = (e) => {
-  const rangeX = e.target.value / 10;
-  reassignConfig(rangeX);
+window.onload = (e) => {
+  canvas.width = e.currentTarget.innerWidth;
+  canvas.height = e.currentTarget.innerHeight - 60;
+  reassignConfig({});
+  reset();
+};
+
+window.onresize = (e) => {
+  console.log('E', e);
+  canvas.width = e.currentTarget.innerWidth;
+  canvas.height = e.currentTarget.innerHeight - 60;
+  reassignConfig({});
   reset();
 };
 

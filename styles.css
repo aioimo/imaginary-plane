@@ -1,10 +1,13 @@
 :root {
   --green: #003518;
   --box-shadow: 1px 1px 2px var(--green);
+  --nav-height: 60px;
 }
 
 body {
   font-family: Georgia, Times, 'Times New Roman', serif;
+  margin: 0;
+  overflow: hidden;
 }
 
 #header {
@@ -14,7 +17,8 @@ body {
 #nav {
   background-color: var(--green);
   color: white;
-  font-size: 1.6rem;
+  /* font-size: 1.6rem; */
+  height: var(--nav-height);
 }
 
 #follower {
@@ -30,7 +34,7 @@ body {
 #info {
   font-size: 1rem;
 }
-
+/* 
 #canvas {
   box-shadow: var(--box-shadow);
-}
+} */
