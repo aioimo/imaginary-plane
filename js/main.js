@@ -44,14 +44,20 @@ const translatePlane = (e) => {
 
 // Listeners
 //
-body.onmouseup = (e) => {
+body.onmouseup = () => {
   isHoldingMouse = false;
+  canvas.classList.add('pointer');
+  canvas.classList.remove('grabbing');
 };
 
-canvas.onmousedown = (e) => {
+canvas.onmousedown = () => {
   reset();
+  canvas.classList.remove('pointer');
+  canvas.classList.add('grabbing');
   isHoldingMouse = true;
 };
+
+canvas.onmouseup = handleOrbit;
 
 canvas.onmousemove = (e) => {
   if (isHoldingMouse) {
@@ -61,9 +67,7 @@ canvas.onmousemove = (e) => {
   }
 };
 
-canvas.onmouseleave = () => {
-  reset();
-};
+canvas.onmouseleave = reset;
 
 canvas.onwheel = (e) => {
   const newRangeX = Math.max(1, Math.min((rangeX += e.wheelDeltaY / 240), 9));
@@ -71,19 +75,14 @@ canvas.onwheel = (e) => {
   reset();
 };
 
-window.onload = (e) => {
+const configureSize = (e) => {
   canvas.width = e.currentTarget.innerWidth;
   canvas.height = e.currentTarget.innerHeight - 60;
   reassignConfig({});
   reset();
 };
 
-window.onresize = (e) => {
-  console.log('E', e);
-  canvas.width = e.currentTarget.innerWidth;
-  canvas.height = e.currentTarget.innerHeight - 60;
-  reassignConfig({});
-  reset();
-};
+window.onload = configureSize;
+window.onresize = configureSize;
 
 setup();

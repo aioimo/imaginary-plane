@@ -34,7 +34,11 @@ body {
 #info {
   font-size: 1rem;
 }
-/* 
-#canvas {
-  box-shadow: var(--box-shadow);
-} */
+
+.crosshair {
+  cursor: crosshair;
+}
+
+.grabbing {
+  cursor: grabbing;
+}
