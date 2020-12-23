@@ -54,7 +54,11 @@ const configureSize = (e) => {
 
 // Listeners
 //
-window.onload = configureSize;
+window.onload = (e) => {
+  canvas.hidden = false;
+  $loading.style.display = 'none';
+  configureSize(e);
+};
 window.onresize = configureSize;
 
 body.onmouseup = () => {

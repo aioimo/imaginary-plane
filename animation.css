@@ -1,0 +1,66 @@
+/**
+ * ==============================================
+ * Dot Revolution
+ * https://github.com/nzbin/three-dots
+ * ==============================================
+ */
+
+.dot-revolution {
+  position: relative;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: var(--green);
+  color: var(--green);
+}
+
+.dot-revolution::before,
+.dot-revolution::after {
+  content: '';
+  display: inline-block;
+  position: absolute;
+}
+
+.dot-revolution::before {
+  left: 0;
+  top: -15px;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: var(--green);
+  color: var(--green);
+  transform-origin: 5px 20px;
+  -webkit-animation: dot-revolution 1.4s linear infinite;
+  animation: dot-revolution 1.4s linear infinite;
+}
+
+.dot-revolution::after {
+  left: 0;
+  top: -30px;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: var(--green);
+  color: var(--green);
+  transform-origin: 5px 35px;
+  -webkit-animation: dot-revolution 1s linear infinite;
+  animation: dot-revolution 1s linear infinite;
+}
+
+@-webkit-keyframes dot-revolution {
+  0% {
+    transform: rotateZ(0deg) translate3d(0, 0, 0);
+  }
+  100% {
+    transform: rotateZ(360deg) translate3d(0, 0, 0);
+  }
+}
+
+@keyframes dot-revolution {
+  0% {
+    transform: rotateZ(0deg) translate3d(0, 0, 0);
+  }
+  100% {
+    transform: rotateZ(360deg) translate3d(0, 0, 0);
+  }
+}

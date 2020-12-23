@@ -26,7 +26,7 @@ function nextTerm(x, y, c) {
   return { nextX, nextY };
 }
 
-const precision = 100;
+const precision = 150;
 function getOrbit(x_0, y_0) {
   const orbit = [{ x: x_0, y: y_0 }];
   let diverges = undefined;

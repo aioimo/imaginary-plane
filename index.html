@@ -9,25 +9,32 @@
       href="https://unpkg.com/tachyons@4.12.0/css/tachyons.min.css"
     />
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="animation.css" />
     <link rel="shortcut icon" type="image/jpg" href="./assets/favicon.png" />
   </head>
-  <body id="body">
+  <body id="body" class="h-100">
     <nav id="nav" class="pa3 pr4 pl4 flex items-center justify-between">
       <span>Complex Plane</span>
       <ul class="list p0">
         <li class="link active">
           <a href="./index.html">Graph</a>
         </li>
-        <li class="link"><a href="./about.html">About</a></li>
+        <li class="link"><a href="./about.html">What is this?</a></li>
       </ul>
     </nav>
-    <!-- <header class="tc">
-      <h1>Imaginary Plane</h1>
-      <p>Z<sub>0</sub> = 0</p>
-      <p>Z<sub>n</sub> = Z<sub>n-1</sub><sup>2</sup> + c</p>
-      <input type="range" min="1" max="60" value="34" id="slider" />
-    </header> -->
-    <canvas class="b pointer" id="canvas" width="1000" height="800"></canvas>
+    <div
+      id="loading"
+      class="tc w-100 h-100 flex flex-row justify-center items-center"
+    >
+      <div class="dot-revolution"></div>
+    </div>
+    <canvas
+      hidden
+      class="b pointer"
+      id="canvas"
+      width="1000"
+      height="800"
+    ></canvas>
     <div id="follower">
       <div id="cValue"></div>
       <div id="info" class="i"></div>

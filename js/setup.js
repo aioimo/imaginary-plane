@@ -1,6 +1,7 @@
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 
+const $loading = document.getElementById('loading');
 const $nav = document.getElementById('nav');
 const body = document.getElementById('body');
 const follower = document.getElementById('follower');
