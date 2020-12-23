@@ -4,8 +4,8 @@ const ctx = canvas.getContext('2d');
 const body = document.getElementById('body');
 const follower = document.getElementById('follower');
 const cValue = document.getElementById('cValue');
-const divergesInfo = document.getElementById('divergesInfo');
-const rangeXSlider = document.getElementById('rangeXSlider');
+const info = document.getElementById('info');
+const slider = document.getElementById('slider');
 
 const width = canvas.width;
 const height = canvas.height;

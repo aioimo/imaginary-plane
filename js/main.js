@@ -26,10 +26,10 @@ const handleOrbit = (e) => {
   cValue.innerText = formatComplexNumber(x, y, diverges);
 
   if (diverges) {
-    divergesInfo.style.display = 'block';
-    divergesInfo.innerText = formatDivergesInfo(diverges);
+    info.style.display = 'block';
+    info.innerText = formatDivergesInfo(diverges);
   } else {
-    divergesInfo.style.display = 'none';
+    info.style.display = 'none';
   }
 
   drawOrbit(orbit, diverges);
@@ -71,7 +71,7 @@ canvas.onwheel = (e) => {
   reset();
 };
 
-rangeXSlider.oninput = (e) => {
+slider.oninput = (e) => {
   const rangeX = e.target.value / 10;
   reassignConfig(rangeX);
   reset();
