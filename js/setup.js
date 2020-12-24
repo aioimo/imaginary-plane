@@ -3,7 +3,7 @@ const ctx = canvas.getContext('2d');
 
 const $loading = document.getElementById('loading');
 const $nav = document.getElementById('nav');
-const body = document.getElementById('body');
+const body = document.getElementById('graph');
 const follower = document.getElementById('follower');
 const cValue = document.getElementById('cValue');
 const info = document.getElementById('info');

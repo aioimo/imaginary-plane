@@ -46,8 +46,8 @@ const getNavHeight = () =>
   parseInt(window.getComputedStyle($nav).getPropertyValue('--nav-height'));
 
 const configureSize = (e) => {
-  canvas.width = e.currentTarget.innerWidth;
-  canvas.height = e.currentTarget.innerHeight - getNavHeight();
+  canvas.width = e.currentTarget.outerWidth;
+  canvas.height = e.currentTarget.outerHeight - getNavHeight();
   reassignConfig({});
   reset();
 };
