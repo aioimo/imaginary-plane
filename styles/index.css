@@ -7,17 +7,12 @@
 
 html {
   height: 100%;
-  font-size: 14px;
+  font-size: 18px;
 }
 
 body {
   font-family: Georgia, Times, 'Times New Roman', serif;
   margin: 0;
-  font-size: 1.4rem;
-}
-
-ul {
-  padding-inline: 0;
 }
 
 #graph {
@@ -55,10 +50,6 @@ ul {
   box-shadow: var(--box-shadow);
 }
 
-.header {
-  font-size: 2rem;
-}
-
 .wrapper {
   margin: 2rem 1rem 1rem 1rem;
 }
@@ -79,6 +70,15 @@ ul {
 
 .constant {
   color: blue;
+}
+
+.question-container {
+  margin-top: 3rem;
+}
+
+.question-container .question {
+  font-style: italic;
+  font-size: 1.2rem;
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
