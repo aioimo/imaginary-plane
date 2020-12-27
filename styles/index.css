@@ -51,6 +51,7 @@ body {
 }
 
 .wrapper {
+  max-width: 800px;
   margin: 2rem 1rem 1rem 1rem;
 }
 
@@ -90,13 +91,13 @@ body {
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
   .wrapper {
-    margin: 4rem 14rem 14rem 14rem;
+    margin: inherit 14rem 14rem 14rem;
   }
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
   .wrapper {
-    margin: 4rem 18rem 18rem 18rem;
+    margin: inherit 18rem 18rem 18rem;
   }
 }
