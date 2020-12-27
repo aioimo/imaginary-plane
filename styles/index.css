@@ -28,15 +28,6 @@ ul {
   font-size: 1.8rem;
 }
 
-#nav {
-  background-color: var(--green);
-  color: white;
-  font-size: 1.4rem;
-  height: var(--nav-height);
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
-}
-
 #follower {
   position: absolute;
   display: none;
@@ -57,27 +48,6 @@ ul {
 
 .grabbing {
   cursor: grabbing;
-}
-
-.link {
-  display: inline-block;
-  margin-left: 2rem;
-}
-
-.link a {
-  color: white;
-  text-decoration: none;
-  padding: 0.5rem;
-}
-
-.link a:hover {
-  color: var(--green);
-  background-color: white;
-  border-radius: var(--border-radius);
-}
-
-.active a {
-  border-bottom: 1px solid white;
 }
 
 .card {
@@ -124,11 +94,6 @@ ul {
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 640px) {
-  #nav {
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
-
   .full-name {
     display: initial;
   }

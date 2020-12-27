@@ -1,0 +1,50 @@
+#nav {
+  background-color: var(--green);
+  color: white;
+  font-size: 1.4rem;
+  height: var(--nav-height);
+  padding-left: 1.1rem;
+  padding-right: 1.1rem;
+}
+
+.link {
+  display: inline-block;
+  margin-left: 2rem;
+}
+
+.link a {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem;
+}
+
+.link a:hover {
+  color: var(--green);
+  background-color: white;
+  border-radius: var(--border-radius);
+}
+
+.active a {
+  border-bottom: 1px solid white;
+}
+
+.as-full {
+  display: none;
+}
+.as-icon {
+  display: initial;
+}
+
+@media only screen and (min-width: 580px) {
+  #nav {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .as-full {
+    display: initial;
+  }
+  .as-icon {
+    display: none;
+  }
+}
