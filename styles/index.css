@@ -24,10 +24,6 @@ ul {
   overflow: hidden;
 }
 
-#header {
-  font-size: 1.8rem;
-}
-
 #follower {
   position: absolute;
   display: none;
