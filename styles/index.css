@@ -64,7 +64,7 @@ ul {
 }
 
 .wrapper {
-  margin: 4rem 1rem 1rem 1rem;
+  margin: 2rem 1rem 1rem 1rem;
 }
 
 .special {
@@ -83,27 +83,6 @@ ul {
 
 .constant {
   color: blue;
-}
-
-.full-name {
-  display: none;
-}
-.short-name {
-  display: initial;
-}
-
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 640px) {
-  .full-name {
-    display: initial;
-  }
-  .short-name {
-    display: none;
-  }
-}
-
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
