@@ -9,6 +9,8 @@
 
 #page-title {
   max-width: 45%;
+  letter-spacing: 0.1rem;
+  font-size: 1.4rem;
 }
 
 ul {
