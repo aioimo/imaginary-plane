@@ -7,6 +7,11 @@ const body = document.getElementById('graph');
 const follower = document.getElementById('follower');
 const cValue = document.getElementById('cValue');
 const info = document.getElementById('info');
+
+const getFont = () => {
+  return window.getComputedStyle(body).getPropertyValue('font-family');
+};
+
 // const slider = document.getElementById('slider');
 
 let width = canvas.width;

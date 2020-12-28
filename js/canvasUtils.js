@@ -36,6 +36,10 @@ function drawXAxis() {
   connectPoints(minX, 0, maxX, 0);
 }
 
+function canvasFontStyle() {
+  return `16px ${getFont()}`;
+}
+
 function drawVerticalTick(cartesianX, cartesianY, val, length = TICK_LENGTH) {
   const { x, y } = cartesianToCanvas(cartesianX, cartesianY);
   ctx.beginPath();
@@ -43,7 +47,7 @@ function drawVerticalTick(cartesianX, cartesianY, val, length = TICK_LENGTH) {
   ctx.lineTo(x, y + length);
   ctx.stroke();
   if (val) {
-    ctx.font = '16px Georgia';
+    ctx.font = canvasFontStyle();
     ctx.fillStyle = 'black';
     ctx.fillText(`${val.toFixed(1)}`, x - 13, y + 30);
   }
@@ -56,7 +60,7 @@ function drawHorizontalTick(cartesianX, cartesianY, val, length = TICK_LENGTH) {
   ctx.lineTo(x + length, y);
   ctx.stroke();
   if (val) {
-    ctx.font = '16px Georgia';
+    ctx.font = canvasFontStyle();
     ctx.fillStyle = 'black';
     ctx.fillText(`${val.toFixed(1)}i`, x + 15, y + 4);
   }

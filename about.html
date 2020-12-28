@@ -71,9 +71,10 @@
               </p>
 
               <p class="special">
-                The graph is the <span class="b">orbit</span> around the point
-                <code>c</code> plotted on the complex plane. <code>c</code> is
-                whichever coordinate your mouse is hovering over.
+                What is being graphed is the <span class="b">orbit</span> around
+                the point <code>c</code> plotted on the complex plane.
+                <code>c</code> is whichever coordinate your mouse is hovering
+                over.
               </p>
             </div>
           </div>
@@ -108,7 +109,11 @@
             >
             <br />
             ... <br />
-            <p class="i">And so on to infinity.</p>
+            <p class="i">
+              And so on to infinity. (We call this a
+              <span class="b">diverging sequence</span> because it gets larger
+              and larger without end. More on this below.)
+            </p>
           </div>
           <div class="answer">
             <p>
@@ -132,7 +137,8 @@
             <p class="i">
               And so on, oscillating between the two values
               <code class="fs-normal">-i</code> and
-              <code class="fs-normal">-1 + i</code>.
+              <code class="fs-normal">-1 + i</code>. (We consider this sequence
+              <span class="b">bounded</span> because it does not diverge.)
             </p>
 
             <p>
@@ -234,14 +240,18 @@
               The Mandelbrot set is illustrated below, with the black regions
               representing points <span class="i">in</span> the set, and colored
               regions representing points <span class="i">outside</span> the
-              set.
+              set. (The specific coloring below is arbitrary, but correlates to
+              how many iterations of the sequence before the point is known to
+              diverge.)
             </p>
             <p>
               Whereas we might have expected a simply shaped region with a
-              sharp, well-defined border, we instead get a beautifully complex
-              shape with an infinitely detailed border; however much you "zoom
-              in" with your decimal precision doing the calculations, the shape
-              will never become smooth, it remains complex at any scale.
+              sharp, well-defined border, what was instead discovered was a
+              beautifully complex shape with an infinitely detailed border;
+              however much you "zoom in" with your decimal precision doing the
+              calculations, the shape will never become smooth, it remains
+              complex at any scale. This type of shape is called a
+              <span class="b">fractal</span>.
             </p>
             <p>
               For example: <code>c = i</code> remains bounded, but
