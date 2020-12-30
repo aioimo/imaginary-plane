@@ -11,8 +11,6 @@ const info = document.getElementById('info');
 const getFont = () =>
   window.getComputedStyle(body).getPropertyValue('font-family');
 
-// const slider = document.getElementById('slider');
-
 let width = canvas.width;
 let height = canvas.height;
 let aspectRatio = width / height;
