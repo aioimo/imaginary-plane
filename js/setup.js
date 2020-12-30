@@ -8,9 +8,8 @@ const follower = document.getElementById('follower');
 const cValue = document.getElementById('cValue');
 const info = document.getElementById('info');
 
-const getFont = () => {
-  return window.getComputedStyle(body).getPropertyValue('font-family');
-};
+const getFont = () =>
+  window.getComputedStyle(body).getPropertyValue('font-family');
 
 // const slider = document.getElementById('slider');
 
